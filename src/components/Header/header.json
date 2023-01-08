@@ -1,0 +1,16 @@
+{
+  "lang": [
+    {
+      "locale": "en",
+      "about": "About",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+    {
+      "locale": "pt",
+      "about": "Sobre",
+      "projects": "Projetos",
+      "contact": "Contato"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "lang": [
+    {
+      "locale": "en",
+      "title": "About me.",
+      "first_block": [
+        "Hi there! My name is Edson Marcelo and I am a Frontend Developer.",
+        "I have always been passionate about the internet itself, games and staff and back in 2020 i started to learn programming on my own and I have been actively seeking to improve myself for almost 2 years now.",
+        "My language of choice is Javascript. I use it mostly with React.js and Next.js."
+      ],
+      "second_block": [
+        "I'm currently working as a Frontend developer in a company based in Rio de Janeiro, where I'm responsible for the development of different kinds of softwares.",
+        "Here i had the opportunitie to work in some features in a pizza callcenter app, develop an application to control all the flux from a school, from the parents registering their kids and paying their annuities to the school administration listing its filials, segments they work with, prices to be paid, etc..",
+        "The app I'm currently working on is a NFT marketplace for a blockchain game that will be released soon."
+      ],
+      "third_block": [
+        "In my free time, you can find me playing games or watching sci-fi movies.",
+        "My favorite game being Tibia (which is also a bone).",
+        "And my favorite movie of all times: Interstellar."
+      ]
+    },
+    {
+      "locale": "pt",
+      "title": "Sobre mim.",
+      "first_block": [
+        "Olá! Meu nome é Edson Marcelo e eu sou um Desenvolvedor web.",
+        "Eu sempre fui apaixonado pela própria internet, jogos etc.. E em 2020 eu comecei a aprender programação por conta própria e estou ativamente buscando me aprimorar por quase 2 anos, agora.",
+        "Minha linguagem preferida é Javascript. Eu à uso principalmente com React.js e Next.js."
+      ],
+      "second_block": [
+        "Atualmente trabalho como desenvolvedor Frontend em uma empresa sediada no Rio de Janeiro, onde sou responsável pelo desenvolvimento de diversos tipos de softwares.",
+        "Aqui tive a oportunidade de trabalhar em algumas funcionalidades de um aplicativo de callcenter de pizzarias, desenvolver um aplicativo para controlar todo o fluxo de uma escola, desde os pais cadastrando seus filhos e pagando suas anuidades até a administração escolar listando suas filiais, segmentos com os quais trabalham , preços a pagar, etc.",
+        "O aplicativo no qual estou trabalhando atualmente é um mercado de NFTs para um jogo blockchain que será lançado em breve."
+      ],
+      "third_block": [
+        "No meu tempo livre, você pode me encontrar jogando ou assistindo a filmes de ficção científica",
+        "Meu jogo favorito é o Tibia (que também é um osso).",
+        "E meu filme favorito de todos os tempos: Interestelar."
+      ]
+    }
+  ]
+}

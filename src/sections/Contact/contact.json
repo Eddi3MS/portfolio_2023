@@ -1,0 +1,46 @@
+{
+  "lang": [
+    {
+      "locale": "en",
+      "warning": {
+        "title": "Atention!",
+        "message": "All fields are required."
+      },
+      "success": {
+        "title": "Success!",
+        "message": "Your message was sent."
+      },
+      "error": {
+        "title": "Error!",
+        "message": "Your message couldnt be sended."
+      },
+      "title": "Get in touch",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "btn": "Send",
+      "btn_send": "Sending.."
+    },
+    {
+      "locale": "pt",
+      "warning": {
+        "title": "Atenção!",
+        "message": "Todos os campos são obrigatórios."
+      },
+      "success": {
+        "title": "Sucesso!",
+        "message": "Sua mensagem foi enviada."
+      },
+      "error": {
+        "title": "Erro!",
+        "message": "Sua mensagem não pode ser enviada."
+      },
+      "title": "Entre em contato",
+      "name": "Nome",
+      "email": "E-mail",
+      "message": "Mensagem",
+      "btn": "Enviar",
+      "btn_send": "Enviando.."
+    }
+  ]
+}

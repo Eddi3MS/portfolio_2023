@@ -1,0 +1,20 @@
+{
+  "lang": [
+    {
+      "locale": "en",
+      "title_1": "Hi! my name is",
+      "title_2": "Edson Marcelo",
+      "title_3": "a Frontend Developer.",
+      "button": "Download Resume",
+      "download": "/curriculum.pdf"
+    },
+    {
+      "locale": "pt",
+      "title_1": "Oi! meu nome é",
+      "title_2": "Edson Marcelo",
+      "title_3": "um Desenvolvedor Web.",
+      "button": "Baixar Curriculo",
+      "download": "/curriculum_pt.pdf"
+    }
+  ]
+}
