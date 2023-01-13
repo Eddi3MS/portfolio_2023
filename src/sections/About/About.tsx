@@ -1,6 +1,6 @@
 import { Box, Heading, Text } from '@ems-ignite/react'
 import { Fade } from 'react-awesome-reveal'
-import { CustomReveal } from '../../components'
+import { CustomReveal, NextSec } from '../../components'
 import useTranslation from '../../hooks/useTranslation'
 import aboutTexts from './about.json'
 import * as S from './About.styled'
@@ -43,6 +43,7 @@ const About = () => {
           </Box>
         </CustomReveal>
       </div>
+      <NextSec href='#2' />
     </S.About>
   )
 }

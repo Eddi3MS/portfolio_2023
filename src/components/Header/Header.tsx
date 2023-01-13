@@ -1,12 +1,13 @@
+import { Text } from '@ems-ignite/react'
+import { Fade } from 'react-awesome-reveal'
 import useTranslation from '../../hooks/useTranslation'
 import { LangSelector } from './components'
-import * as S from './Header.styled'
 import headerTexts from './header.json'
-import { Fade } from 'react-awesome-reveal'
-import { Text } from '@ems-ignite/react'
+import * as S from './Header.styled'
 
 const Header = () => {
   const currLocale = useTranslation(headerTexts.lang)
+
   return (
     <S.Header>
       <div className='c_header__wrapper'>

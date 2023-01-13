@@ -54,4 +54,16 @@ h2 {
     position: relative;
     z-index: 5;
   }
+
+  audio {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+
+  
+
+  section {
+    padding-bottom: 5rem;
+  }
 `

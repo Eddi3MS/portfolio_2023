@@ -1,23 +1,21 @@
 import styled from 'styled-components'
 export const About = styled.section`
-  min-height: 100vh;
+  min-height: calc(100vh - var(--header-height) - 5rem);
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),
     url('/space.webp');
-
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left;
   position: relative;
   z-index: 2;
-  padding-bottom: 2.5rem;
 
   h2 {
-    padding-block: 2.5rem 5rem;
+    padding-block: 2.5rem;
     text-align: center;
   }
 
   .about__container {
-    max-width: 96%;
+    max-width: min(1280px, 96%);
     margin-inline: auto;
   }
 
@@ -45,6 +43,6 @@ export const About = styled.section`
   }
 
   .about__wrapper:not(:nth-of-type(1)) {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
   }
 `

@@ -1,7 +1,6 @@
 import { Button, Heading, Text } from '@ems-ignite/react'
-import { ArrowCircleDown, Download } from 'phosphor-react'
-import { AttentionSeeker } from 'react-awesome-reveal'
-import { CustomReveal } from '../../components'
+import { Download } from 'phosphor-react'
+import { CustomReveal, NextSec } from '../../components'
 import useTranslation from '../../hooks/useTranslation'
 import heroTexts from './hero.json'
 import * as S from './Hero.styled'
@@ -39,11 +38,7 @@ const Hero = () => {
           </Button>
         </CustomReveal>
       </div>
-      <a href='#1' className='arrow_down'>
-        <AttentionSeeker effect='bounce'>
-          <ArrowCircleDown size={40} />
-        </AttentionSeeker>
-      </a>
+      <NextSec href='#1' />
     </S.Hero>
   )
 }

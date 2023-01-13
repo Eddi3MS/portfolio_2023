@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 export const Contact = styled.section`
-  min-height: 100vh;
+  min-height: calc(100vh - var(--header-height));
   background-color: var(--bg);
   padding-inline: 0.5rem;
 
   h2 {
-    padding-block: 2.5rem 5rem;
+    padding-block: 2.5rem;
     text-align: center;
   }
 

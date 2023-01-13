@@ -1,5 +1,10 @@
 import Head from 'next/head'
 import { About, Contact, Hero } from '../sections'
+import dynamic from 'next/dynamic'
+
+const Projects = dynamic(() => import('../sections/Projects'), {
+  ssr: false,
+})
 
 export default function Home() {
   return (
@@ -14,10 +19,7 @@ export default function Home() {
       <Hero />
 
       <About />
-      <section
-        id='2'
-        style={{ minHeight: '100vh', background: 'blue' }}
-      ></section>
+      <Projects />
       <Contact />
     </>
   )

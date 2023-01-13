@@ -1,0 +1,89 @@
+{
+  "lang": [
+    {
+      "locale": "en",
+      "title": "Projects.",
+      "projects": [
+        {
+          "id": 1,
+          "title": "Legacy School",
+          "techs": "React.js, Next.js, SASS, Typescript, Redux, Context API, React-query..",
+          "details": " This project was designed to make it easy for families to register their children for school and ensure that all necessary information is collected in a timely manner. The system allows for online registration, document uploads, and automatic notifications for missing information or next steps. In addition to the user-friendly interface for students and parents, our school registration project also includes a comprehensive backoffice for management. This backoffice allows administrators to easily review and manage all registration information, track enrollment progress, and make data-driven decisions."
+        },
+        {
+          "id": 2,
+          "title": "Leader GD",
+          "techs": "React.js, SASS, Typescript, Redux, Context API, Axios..",
+          "details": "This project was designed to streamline the process of evaluating and tracking employee performance. The user-friendly interface allows for simple data entry and easy access to performance metrics. With this tool, managers can easily track employee progress, set goals, and provide feedback, all in one convenient platform."
+        },
+        {
+          "id": 3,
+          "title": "Dogs",
+          "techs": "React.js, SASS, Typescript, Redux, Axios, React-query..",
+          "details": "This app was designed to bring dog lovers together and provide a platform for them to share pictures and videos of their furry friends. Built using React.js, the app features a user-friendly interface and responsive design, making it easy for users to navigate and interact with the content. Users can create a profile for their dog, share pictures and videos, and interact with other dog owners through comments."
+        },
+        {
+          "id": 4,
+          "title": "ECommerce",
+          "techs": "Next.js, Strapi, Stripe, Framer Motion, Styled Components, Axios..",
+          "details": "This fictional platform was designed to provide a seamless shopping experience for customers, with a user-friendly interface and responsive design. Built using the power of Next.js for performance and Strapi for the backend, it offers a robust and scalable solution for any ecommerce needs. With the ability to easily manage products, orders, and customer data, this platform is perfect for anyone looking to start their own online store."
+        },
+
+        {
+          "id": 5,
+          "title": "Design System",
+          "techs": "Changeset, Turbo, Radix UI, Stitches, Storybook, Polished..",
+          "details": "Design system Library developed in Rocketseat.com, Lib deployed to NPM at @ems-ignite/react and documentation done with Storybook at github pages."
+        },
+        {
+          "id": 6,
+          "title": "Callcenter / Backoffice",
+          "techs": "React.js, SASS, Typescript/Javascript, React-Bootstrap, Axios..",
+          "details": "The first project i worked on, i was responsible for creating small features, like the toogle of cupoms activity in the backoffice. And correct some eventual bugs."
+        }
+      ]
+    },
+    {
+      "locale": "pt",
+      "title": "Projetos.",
+      "projects": [
+        {
+          "id": 1,
+          "title": "Legacy School",
+          "techs": "React.js, Next.js, SASS, Typescript, Redux, Context API, React-query..",
+          "details": "Projetado para facilitar o processo de matrícula para as famílias e garantir que todas as informações necessárias sejam coletadas de forma oportuna. O sistema permite matrícula online, upload de documentos e notificações automáticas para informações ou próximos passos em falta. Além da interface amigável para os pais, nosso projeto de matrícula também inclui uma área administrativa completa, que permite aos administradores revisem e gerenciem facilmente todas as informações de matrícula, acompanhem o progresso de matrícula e tomem decisões baseadas em dados."
+        },
+        {
+          "id": 2,
+          "title": "Leader GD",
+          "techs": "React.js, SASS, Typescript, Redux, Context API, Axios..",
+          "details": "Projetado para simplificar o processo de avaliação e rastreamento de desempenho de funcionários. A interface amigável permite uma entrada de dados simples e fácil acesso as métricas de desempenho. Com esta ferramenta, os gerentes podem facilmente rastrear o progresso dos funcionários, estabelecer metas e fornecer feedback, tudo em uma plataforma conveniente."
+        },
+        {
+          "id": 3,
+          "title": "Dogs",
+          "techs": "React.js, SASS, Typescript, Redux, Axios, React-query..",
+          "details": "Este aplicativo foi projetado para reunir os amantes de cães e fornecer uma plataforma para eles compartilharem fotos e vídeos de seus amigos peludos. Desenvolvido usando React.js, o aplicativo possui uma interface amigável e design responsivo, facilitando a navegação e interação com o conteúdo. Os usuários podem criar um perfil para seu cão, compartilhar fotos e vídeos e interagir com outros donos de cães através de comentários."
+        },
+        {
+          "id": 4,
+          "title": "Ecommerce",
+          "techs": "Next.js, Strapi, Stripe, Framer Motion, Styled Components, Axios..",
+          "details": "Esta plataforma fictícia foi projetada para fornecer uma experiência de compra fluida para os clientes, com uma interface amigável e design responsivo. Desenvolvida usando o poder do Next.js para desempenho e Strapi para o backend, oferece uma solução robusta e escalável para qualquer necessidade de comércio eletrônico. Com a capacidade de gerenciar facilmente produtos, pedidos e dados de clientes, essa plataforma é perfeita para qualquer pessoa que deseje iniciar sua própria loja online."
+        },
+        {
+          "id": 5,
+          "title": "Design System",
+          "techs": "Changeset, Turbo, Radix UI, Stitches, Storybook, Polished..",
+          "details": "Design System desenvolvida na Rocketseat.com, Lib enviada para o NPM em @ems-ignite/react e documentação feita com Storybook nas páginas do Github."
+        },
+        {
+          "id": 6,
+          "title": "Callcenter / Backoffice",
+          "techs": "React.js, SASS, Typescript/Javascript, React-Bootstrap, Axios..",
+          "details": "O primeiro projeto em que trabalhei, eu era responsável pela criação de pequenas 'features', como o ativar/desativar de um cupom no 'backoffice'. E também pela correção de eventuais bugs."
+        }
+      ]
+    }
+  ]
+}

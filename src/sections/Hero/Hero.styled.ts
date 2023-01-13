@@ -33,9 +33,4 @@ export const Hero = styled.section`
     max-width: 230px;
     margin-inline: auto;
   }
-
-  .arrow_down {
-    position: absolute;
-    bottom: 1rem;
-  }
 `
