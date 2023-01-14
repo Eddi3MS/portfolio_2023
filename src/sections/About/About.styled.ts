@@ -1,5 +1,6 @@
-import styled from 'styled-components'
-export const About = styled.section`
+import styled, { css } from 'styled-components'
+
+export const About = styled.section<{ width: number }>`
   min-height: calc(100vh - var(--header-height) - 5rem);
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),
     url('/space.webp');
@@ -8,6 +9,10 @@ export const About = styled.section`
   background-position: left;
   position: relative;
   z-index: 2;
+
+  ${({ width }) => css`
+    padding-bottom: ${width > 840 ? '5rem' : '2.5rem'};
+  `}
 
   h2 {
     padding-block: 2.5rem;

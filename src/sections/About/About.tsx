@@ -1,6 +1,7 @@
 import { Box, Heading, Text } from '@ems-ignite/react'
 import { Fade } from 'react-awesome-reveal'
 import { CustomReveal, NextSec } from '../../components'
+import { useWindowSize } from '../../hooks'
 import useTranslation from '../../hooks/useTranslation'
 import aboutTexts from './about.json'
 import * as S from './About.styled'
@@ -8,8 +9,10 @@ import * as S from './About.styled'
 const About = () => {
   const currLocale = useTranslation(aboutTexts.lang)
 
+  const { width } = useWindowSize()
+
   return (
-    <S.About id='1'>
+    <S.About id='1' width={width}>
       <Fade cascade className='z5'>
         <Heading size='3xl'>{currLocale.title}</Heading>
       </Fade>
@@ -43,7 +46,7 @@ const About = () => {
           </Box>
         </CustomReveal>
       </div>
-      <NextSec href='#2' />
+      {width > 840 ? <NextSec href='#2' /> : null}
     </S.About>
   )
 }

@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-export const Projects = styled.section`
+export const Projects = styled.section<{ width: number }>`
   min-height: calc(100vh - var(--header-height));
   background: var(--bg);
   position: relative;
@@ -8,6 +8,9 @@ export const Projects = styled.section`
 
   display: flex;
   flex-direction: column;
+  ${({ width }) => css`
+    padding-bottom: ${width > 840 ? '5rem' : '2.5rem'};
+  `}
 
   h2 {
     text-align: center;

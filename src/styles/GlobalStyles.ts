@@ -61,9 +61,4 @@ h2 {
     visibility: hidden;
   }
 
-  
-
-  section {
-    padding-bottom: 5rem;
-  }
 `

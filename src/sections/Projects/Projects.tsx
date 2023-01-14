@@ -10,12 +10,15 @@ import * as S from './Projects.styled'
 import Image from 'next/image'
 import { Navigation, Pagination } from 'swiper'
 import { CaretLeft, CaretRight } from 'phosphor-react'
+import { useWindowSize } from '../../hooks'
 
 const Projects = () => {
   const currLocale = useTranslation(porjectsTexts.lang)
 
+  const { width } = useWindowSize()
+
   return (
-    <S.Projects id='2'>
+    <S.Projects id='2' width={width}>
       <Fade cascade className='z5'>
         <Heading size='3xl'>{currLocale.title}</Heading>
       </Fade>
@@ -48,7 +51,7 @@ const Projects = () => {
                   alt=''
                   width={410}
                   height={215}
-                  placeholder='blur'
+                  //placeholder='blur'
                 />
                 <div>
                   <Heading as='h3' className='inter'>
@@ -76,7 +79,7 @@ const Projects = () => {
         </div>
       </div>
 
-      <NextSec href='#3' />
+      {width > 840 ? <NextSec href='#3' /> : null}
     </S.Projects>
   )
 }

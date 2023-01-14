@@ -17,6 +17,7 @@ export const Contact = styled.section`
 
   .form__wrapper {
     max-width: 600px;
+    width: 80%;
     margin-inline: auto;
     position: relative;
     gap: 1.5rem;
