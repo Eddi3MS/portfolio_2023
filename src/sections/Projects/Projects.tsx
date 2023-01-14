@@ -46,8 +46,8 @@ const Projects = () => {
               <Image
                 src={`/projects/${project.id}.png`}
                 alt=''
-                width={900}
-                height={700}
+                width={410}
+                height={215}
               />
               <div>
                 <Heading as='h3' className='inter'>
