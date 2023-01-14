@@ -18,23 +18,26 @@ const clientSecret = process.env.CLIENT_SECRET
 const refreshToken = process.env.REFRESH_TOKEN
 
 const OAuth2_client = new OAuth2(clientId, clientSecret)
-OAuth2_client.setCredentials({ refresh_token: refreshToken })
-
-const accessToken = OAuth2_client.getAccessToken()
-
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    type: 'OAuth2',
-    user: email,
-    clientId,
-    clientSecret,
-    refreshToken,
-    accessToken,
-  },
+OAuth2_client.setCredentials({
+  refresh_token: refreshToken,
 })
 
-const mailer = ({ senderMail, name, text }: MailerProps) => {
+const mailer = async ({ senderMail, name, text }: MailerProps) => {
+  const { token } = await OAuth2_client.getAccessToken()
+  console.log('🚀 ~ file: contact.ts:28 ~ mailer ~ token', token)
+
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      type: 'OAuth2',
+      user: email,
+      clientId,
+      clientSecret,
+      refreshToken,
+      accessToken: token,
+    },
+  })
+
   const from = `${name} <${senderMail}>`
   const message = {
     from,

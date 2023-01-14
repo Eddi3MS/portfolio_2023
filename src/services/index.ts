@@ -1,5 +1,6 @@
-import axios, { AxiosResponse } from 'axios'
+import { AxiosResponse } from 'axios'
 import { MailerProps } from '../pages/api/contact'
+import api from './api'
 
 class AppService {
   public static async sendEmail({
@@ -7,7 +8,7 @@ class AppService {
     senderMail,
     text,
   }: MailerProps): Promise<AxiosResponse> {
-    return await axios.post('/api/contact', {
+    return await api.post('/api/contact', {
       name,
       senderMail,
       text,
