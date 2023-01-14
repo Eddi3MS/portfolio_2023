@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 export const Projects = styled.section`
   min-height: calc(100vh - var(--header-height));
   background: var(--bg);
@@ -11,6 +12,14 @@ export const Projects = styled.section`
   h2 {
     text-align: center;
     padding-block: 2.5rem;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
   }
 
   .projects__slider {
