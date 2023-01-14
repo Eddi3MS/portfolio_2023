@@ -12,7 +12,7 @@
         },
         {
           "id": 2,
-          "title": "Leader GD",
+          "title": "Leader GDO",
           "techs": "React.js, SASS, Typescript, Redux, Context API, Axios..",
           "details": "This project was designed to streamline the process of evaluating and tracking employee performance. The user-friendly interface allows for simple data entry and easy access to performance metrics. With this tool, managers can easily track employee progress, set goals, and provide feedback, all in one convenient platform."
         },
@@ -55,7 +55,7 @@
         },
         {
           "id": 2,
-          "title": "Leader GD",
+          "title": "Leader GDO",
           "techs": "React.js, SASS, Typescript, Redux, Context API, Axios..",
           "details": "Projetado para simplificar o processo de avaliação e rastreamento de desempenho de funcionários. A interface amigável permite uma entrada de dados simples e fácil acesso as métricas de desempenho. Com esta ferramenta, os gerentes podem facilmente rastrear o progresso dos funcionários, estabelecer metas e fornecer feedback, tudo em uma plataforma conveniente."
         },

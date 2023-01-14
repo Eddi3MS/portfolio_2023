@@ -6,7 +6,7 @@ export const Header = styled.header`
   left: 0;
   right: 0;
   height: var(--header-height);
-  z-index: 10;
+  z-index: 6;
 
   display: flex;
   justify-content: center;

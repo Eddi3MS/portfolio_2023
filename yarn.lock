@@ -250,10 +250,10 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.3.0.tgz#ea89004119dc42db2e1dba0f97d553f7372f6fcb"
   integrity sha512-AHPmaAx+RYfZz0eYu6Gviiagpmiyw98ySSlQvCUhVGDRtDFe4DBS0x1bSjdF3gqUDYOczB+yYvBTtEylYSdRhg==
 
-"@ems-ignite/react@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@ems-ignite/react/-/react-5.0.0.tgz#3691a89e63f57b90c941dc8147296a6ef385ee50"
-  integrity sha512-XzurgjoY/F9bQPSQO8oRNWwJL1zpo7Zsb9iOuHT1sOWgdgAYtPjJRs4+Rr4Fv0FSrxomeRf5G4fyslK8dWhlXQ==
+"@ems-ignite/react@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@ems-ignite/react/-/react-6.0.0.tgz#92b39ba295abd44d447045c5613461ec0f5abc42"
+  integrity sha512-qljMZ9KSunx38QJiKpXmMUbMzLxNGTFRbIZ/qR5tClLn9t6XO6WKN3LgT62ArjxOlVUGjJCcZbcuRv7ECD5vdg==
   dependencies:
     "@radix-ui/react-avatar" "^1.0.0"
     "@radix-ui/react-checkbox" "^1.0.0"
