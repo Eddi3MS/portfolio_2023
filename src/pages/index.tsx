@@ -1,6 +1,10 @@
 import Head from 'next/head'
-import { About, Contact, Hero } from '../sections'
 import dynamic from 'next/dynamic'
+import { lazy } from 'react'
+import { Hero } from '../sections'
+
+const About = lazy(() => import('../sections/About'))
+const Contact = lazy(() => import('../sections/Contact'))
 
 const Projects = dynamic(() => import('../sections/Projects'), {
   ssr: false,

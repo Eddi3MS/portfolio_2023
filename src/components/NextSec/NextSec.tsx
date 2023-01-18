@@ -5,7 +5,11 @@ import * as S from './NextSec.styled'
 
 const NextSec = (props: AnchorHTMLAttributes<HTMLAnchorElement>) => {
   return (
-    <S.NextSec className='arrow_down' {...props}>
+    <S.NextSec
+      className='arrow_down'
+      aria-label='click to next section'
+      {...props}
+    >
       <AttentionSeeker effect='bounce'>
         <ArrowCircleDown size={40} />
       </AttentionSeeker>

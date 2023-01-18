@@ -39,6 +39,7 @@ const LangSelector = (props: LangSelectorProps) => {
             }`}
             onClick={changeLanguage.bind(this, lang.value)}
             style={{ backgroundImage: `url(${lang.src})` }}
+            aria-label={`change language to ${lang.title}`}
           >
             <span aria-label={lang.title}>{lang.title}</span>
           </button>
