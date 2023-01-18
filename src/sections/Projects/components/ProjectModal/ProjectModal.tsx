@@ -11,7 +11,12 @@ const ProjectModal = ({ project, onClose, ...rest }: ProjectModalProps) => {
   return (
     <S.ProjectModal>
       <Modal {...rest} width={600} onOpenChange={onClose} title={project.title}>
-        <img src={`/projects/${project.id}.png`} alt={project.title} />
+        <img
+          src={`/projects/${project.id}.png`}
+          alt={project.title}
+          width={536}
+          height={268}
+        />
 
         <Text className='inter' size='xs'>
           {project.techs}

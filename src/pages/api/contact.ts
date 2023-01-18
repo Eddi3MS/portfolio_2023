@@ -24,7 +24,6 @@ OAuth2_client.setCredentials({
 
 const mailer = async ({ senderMail, name, text }: MailerProps) => {
   const { token } = await OAuth2_client.getAccessToken()
-  console.log('🚀 ~ file: contact.ts:28 ~ mailer ~ token', token)
 
   const transporter = nodemailer.createTransport({
     service: 'gmail',

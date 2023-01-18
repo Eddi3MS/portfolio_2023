@@ -114,7 +114,7 @@ const Projects = () => {
         {width > 840 ? <NextSec href='#3' /> : null}
       </S.Projects>
 
-      {modal && modal.project ? (
+      {modal.show && modal.project ? (
         <ProjectModal
           open={modal.show}
           project={modal.project}
