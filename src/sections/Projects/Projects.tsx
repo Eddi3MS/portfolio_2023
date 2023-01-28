@@ -2,7 +2,6 @@ import { Box, Button, Heading, Text } from '@ems-ignite/react'
 import { Fade } from 'react-awesome-reveal'
 import 'swiper/css'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { NextSec } from '../../components'
 import useTranslation from '../../hooks/useTranslation'
 import porjectsTexts from './projects.json'
 import * as S from './Projects.styled'
@@ -11,7 +10,6 @@ import Image from 'next/image'
 import { CaretLeft, CaretRight } from 'phosphor-react'
 import { useState } from 'react'
 import { Navigation, Pagination } from 'swiper'
-import { useWindowSize } from '../../hooks'
 import { ProjectModal } from './components'
 
 export interface ProjectProps {
@@ -32,7 +30,6 @@ const Projects = () => {
   })
 
   const currLocale = useTranslation(porjectsTexts.lang)
-  const { width } = useWindowSize()
 
   const handleCloseModal = () => {
     setModal({
@@ -49,11 +46,11 @@ const Projects = () => {
 
   return (
     <>
-      <S.Projects id='2' width={width}>
-        <Fade cascade className='z5'>
-          <Heading size='3xl'>{currLocale.title}</Heading>
+      <S.Projects id="2">
+        <Fade cascade className="z5">
+          <Heading size="3xl">{currLocale.title}</Heading>
         </Fade>
-        <div className='wrapper'>
+        <div className="wrapper">
           <Swiper
             centeredSlides
             modules={[Navigation, Pagination]}
@@ -67,7 +64,7 @@ const Projects = () => {
             }}
             onSwiper={(swiper) => console.log(swiper)}
             onSlideChange={() => console.log('slide change')}
-            className='projects__slider'
+            className="projects__slider"
             speed={1000}
             breakpoints={{
               350: { slidesPerView: 1, spaceBetween: 8 },
@@ -76,18 +73,18 @@ const Projects = () => {
           >
             {currLocale.projects?.map((project) => (
               <SwiperSlide key={project.id}>
-                <Box className='project__card'>
+                <Box className="project__card">
                   <Image
                     src={`/projects/${project.id}.png`}
-                    alt=''
+                    alt=""
                     width={410}
                     height={215}
                   />
                   <div>
-                    <Heading as='h3' className='inter'>
+                    <Heading as="h3" className="inter">
                       {project.title}
                     </Heading>
-                    <Text className='inter' size='xs'>
+                    <Text className="inter" size="xs">
                       {project.techs}
                     </Text>
 
@@ -100,18 +97,16 @@ const Projects = () => {
             ))}
           </Swiper>
 
-          <div className='swiper-navigation'>
-            <div className='swiper-button-prev'>
-              <CaretLeft size={32} weight='bold' />
+          <div className="swiper-navigation">
+            <div className="swiper-button-prev">
+              <CaretLeft size={32} weight="bold" />
             </div>
-            <div className='swiper-pagination'></div>
-            <div className='swiper-button-next'>
-              <CaretRight size={32} weight='bold' />
+            <div className="swiper-pagination"></div>
+            <div className="swiper-button-next">
+              <CaretRight size={32} weight="bold" />
             </div>
           </div>
         </div>
-
-        {width > 840 ? <NextSec href='#3' /> : null}
       </S.Projects>
 
       {modal.show && modal.project ? (

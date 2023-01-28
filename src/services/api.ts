@@ -4,22 +4,6 @@ const instance = axios.create({
   baseURL: '',
 })
 
-instance.interceptors.request.use((config) => {
-  console.log('interceptou request')
-
-  return config
-})
-
-instance.interceptors.response.use((success) => {
-  const { config, data } = success
-
-  if (config.url?.includes('/api/contact') && config.method === 'post') {
-    console.log(data)
-  }
-
-  return success
-})
-
 const api = (axios: AxiosInstance) => {
   return {
     get: <T>(url: string, config: AxiosRequestConfig = {}) => {
