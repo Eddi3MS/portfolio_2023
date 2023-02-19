@@ -36,6 +36,7 @@ const Contact = () => {
       })
 
     setLoading(true)
+
     try {
       await AppService.sendEmail({ name, text, senderMail })
 
@@ -58,47 +59,48 @@ const Contact = () => {
     }
   }
   return (
-    <S.Contact id='3'>
-      <Fade cascade className='z5'>
-        <Heading size='3xl'>{currLocale.title}</Heading>
+    <S.Contact id="3">
+      <Fade cascade className="z5">
+        <Heading size="3xl">{currLocale.title}</Heading>
       </Fade>
 
-      <CustomReveal delay={100} className='z5'>
+      <CustomReveal delay={100} className="z5">
         <Box
-          as='form'
-          className='form__wrapper z5'
+          as="form"
+          className="form__wrapper z5"
           onSubmit={handleContact}
-          id='contact_form'
+          id="contact_form"
         >
           <CustomReveal delay={300}>
-            <Text as='label' className='input__wrapper inter' htmlFor='name'>
+            <Text as="label" className="input__wrapper inter" htmlFor="name">
               {currLocale.name}:
-              <TextInput name='name' id='name' type='text' />
+              <TextInput name="name" id="name" type="text" />
             </Text>
           </CustomReveal>
 
           <CustomReveal delay={400}>
             <Text
-              as='label'
-              className='input__wrapper inter'
-              htmlFor='senderMail'
+              as="label"
+              className="input__wrapper inter"
+              htmlFor="senderMail"
             >
               {currLocale.email}:
-              <TextInput name='senderMail' id='senderMail' type='email' />
+              <TextInput name="senderMail" id="senderMail" type="email" />
             </Text>
           </CustomReveal>
+
           <CustomReveal delay={500}>
-            <Text as='label' className='input__wrapper inter' htmlFor='text'>
+            <Text as="label" className="input__wrapper inter" htmlFor="text">
               {currLocale.message}:
-              <TextArea name='text' id='text' rows={3} />
+              <TextArea name="text" id="text" rows={3} />
             </Text>
           </CustomReveal>
 
           <CustomReveal delay={600}>
             <Button
-              type='submit'
-              size='full'
-              className='inter'
+              type="submit"
+              size="full"
+              className="inter"
               disabled={loading}
             >
               {loading ? currLocale.btn_send : currLocale.btn}

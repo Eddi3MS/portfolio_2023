@@ -2,6 +2,13 @@
 import nodemailer from 'nodemailer'
 import { google } from 'googleapis'
 import { NextApiRequest, NextApiResponse } from 'next'
+import express from 'express'
+
+import cors from 'cors'
+
+const app = express()
+app.use(cors())
+app.use(express.json())
 
 export interface MailerProps {
   senderMail: string
@@ -9,24 +16,30 @@ export interface MailerProps {
   text: string
 }
 
-const { OAuth2 } = google.auth
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  if (req.method !== 'POST')
+    return res.status(403).send({ message: 'method not allowed.' })
 
-const email = process.env.MAILADRESS
+  const { OAuth2 } = google.auth
 
-const clientId = process.env.CLIENT_ID
-const clientSecret = process.env.CLIENT_SECRET
-const refreshToken = process.env.REFRESH_TOKEN
-console.log('🚀 ~ file: contact.ts:19 ~ refreshToken', refreshToken)
+  const email = process.env.MAILADRESS
 
-const OAuth2_client = new OAuth2(clientId, clientSecret)
-console.log('🚀 ~ file: contact.ts:21 ~ OAuth2_client', OAuth2_client)
-OAuth2_client.setCredentials({
-  refresh_token: refreshToken,
-})
+  const clientId = process.env.CLIENT_ID
+  const clientSecret = process.env.CLIENT_SECRET
+  const refreshToken = process.env.REFRESH_TOKEN
 
-const mailer = async ({ senderMail, name, text }: MailerProps) => {
-  const { token } = await OAuth2_client.getAccessToken()
-  console.log('🚀 ~ file: contact.ts:27 ~ mailer ~ token', token)
+  const OAUTH_PLAYGROUND = 'https://developers.google.com/oauthplayground'
+
+  const OAuth2_client = new OAuth2(clientId, clientSecret, OAUTH_PLAYGROUND)
+
+  OAuth2_client.setCredentials({
+    refresh_token: refreshToken,
+  })
+
+  const { token: accessToken } = await OAuth2_client.getAccessToken()
 
   const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -36,13 +49,18 @@ const mailer = async ({ senderMail, name, text }: MailerProps) => {
       clientId,
       clientSecret,
       refreshToken,
-      accessToken: token,
+      accessToken,
     },
   })
 
-  console.log('🚀 ~ file: contact.ts:39 ~ mailer ~ transporter', transporter)
+  const { senderMail, name, text } = req.body
+  if (!senderMail || !name || !text) {
+    res.status(403).send({ message: 'invalid request data' })
+    return
+  }
 
   const from = `${name} <${senderMail}>`
+
   const message = {
     from,
     to: `${email}`,
@@ -51,30 +69,15 @@ const mailer = async ({ senderMail, name, text }: MailerProps) => {
     replyTo: from,
   }
 
-  return new Promise((resolve, reject) => {
-    transporter.sendMail(message, (error: any, info: unknown) =>
-      error ? reject(error) : resolve(info)
-    )
-  })
-}
+  try {
+    new Promise((resolve, reject) => {
+      transporter.sendMail(message, (error: any, info: unknown) =>
+        error ? reject(error) : resolve(info)
+      )
+    })
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
-  if (req.method !== 'POST')
-    return res.status(403).send({ message: 'method not allowed.' })
-
-  const { senderMail, name, text } = req.body
-  if (senderMail === '' || name === '' || text === '') {
-    res.status(403).send({ message: 'invalid request data' })
-    return
-  }
-
-  const mailerRes = (await mailer({ senderMail, name, text })) as {
-    messageId?: string
-  }
-
-  if ('messageId' in mailerRes) {
     return res.status(200).send({ message: 'message sent.' })
+  } catch (error) {
+    return res.status(403).send({ message: 'error' + JSON.stringify(error) })
   }
-
-  return res.status(403).send({ message: 'Something went wrong.' })
 }
