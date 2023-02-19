@@ -2,13 +2,6 @@
 import nodemailer from 'nodemailer'
 import { google } from 'googleapis'
 import { NextApiRequest, NextApiResponse } from 'next'
-import express from 'express'
-
-import cors from 'cors'
-
-const app = express()
-app.use(cors())
-app.use(express.json())
 
 export interface MailerProps {
   senderMail: string
@@ -31,9 +24,7 @@ export default async function handler(
   const clientSecret = process.env.CLIENT_SECRET
   const refreshToken = process.env.REFRESH_TOKEN
 
-  const OAUTH_PLAYGROUND = 'https://developers.google.com/oauthplayground'
-
-  const OAuth2_client = new OAuth2(clientId, clientSecret, OAUTH_PLAYGROUND)
+  const OAuth2_client = new OAuth2(clientId, clientSecret)
 
   OAuth2_client.setCredentials({
     refresh_token: refreshToken,
