@@ -9,28 +9,22 @@ export interface MailerProps {
   text: string
 }
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  if (req.method !== 'POST')
-    return res.status(403).send({ message: 'method not allowed.' })
+const { OAuth2 } = google.auth
 
-  const { OAuth2 } = google.auth
+const email = process.env.MAILADRESS
 
-  const email = process.env.MAILADRESS
+const clientId = process.env.CLIENT_ID
+const clientSecret = process.env.CLIENT_SECRET
+const refreshToken = process.env.REFRESH_TOKEN
 
-  const clientId = process.env.CLIENT_ID
-  const clientSecret = process.env.CLIENT_SECRET
-  const refreshToken = process.env.REFRESH_TOKEN
+const OAuth2_client = new OAuth2(clientId, clientSecret)
 
-  const OAuth2_client = new OAuth2(clientId, clientSecret)
+OAuth2_client.setCredentials({
+  refresh_token: refreshToken,
+})
 
-  OAuth2_client.setCredentials({
-    refresh_token: refreshToken,
-  })
-
-  const { token: accessToken } = await OAuth2_client.getAccessToken()
+const mailer = async ({ senderMail, name, text }: MailerProps) => {
+  const { token } = await OAuth2_client.getAccessToken()
 
   const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -40,18 +34,11 @@ export default async function handler(
       clientId,
       clientSecret,
       refreshToken,
-      accessToken,
+      accessToken: token,
     },
   })
 
-  const { senderMail, name, text } = req.body
-  if (!senderMail || !name || !text) {
-    res.status(403).send({ message: 'invalid request data' })
-    return
-  }
-
   const from = `${name} <${senderMail}>`
-
   const message = {
     from,
     to: `${email}`,
@@ -60,15 +47,30 @@ export default async function handler(
     replyTo: from,
   }
 
-  try {
-    new Promise((resolve, reject) => {
-      transporter.sendMail(message, (error: any, info: unknown) =>
-        error ? reject(error) : resolve(info)
-      )
-    })
+  return new Promise((resolve, reject) => {
+    transporter.sendMail(message, (error: any, info: unknown) =>
+      error ? reject(error) : resolve(info)
+    )
+  })
+}
 
-    return res.status(200).send({ message: 'message sent.' })
-  } catch (error) {
-    return res.status(403).send({ message: 'error' + JSON.stringify(error) })
+export default async (req: NextApiRequest, res: NextApiResponse) => {
+  if (req.method !== 'POST')
+    return res.status(403).send({ message: 'method not allowed.' })
+
+  const { senderMail, name, text } = req.body
+  if (senderMail === '' || name === '' || text === '') {
+    res.status(403).send({ message: 'invalid request data' })
+    return
   }
+
+  const mailerRes = (await mailer({ senderMail, name, text })) as {
+    messageId?: string
+  }
+
+  if ('messageId' in mailerRes) {
+    return res.status(200).send({ message: 'message sent.' })
+  }
+
+  return res.status(403).send({ message: 'Something went wrong.' })
 }
